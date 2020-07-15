@@ -3,11 +3,11 @@
 //
 
 #include "rsa.h"
-#include <openssl/armeabi/include/openssl/ossl_typ.h>
-#include <openssl/armeabi/include/openssl/bio.h>
-#include <openssl/armeabi/include/openssl/rsa.h>
-#include <openssl/armeabi/include/openssl/pem.h>
-#include <openssl/armeabi/include/openssl/err.h>
+#include <openssl/armeabi-v7a/include/openssl/ossl_typ.h>
+#include <openssl/armeabi-v7a/include/openssl/bio.h>
+#include <openssl/armeabi-v7a/include/openssl/rsa.h>
+#include <openssl/armeabi-v7a/include/openssl/pem.h>
+#include <openssl/armeabi-v7a/include/openssl/err.h>
 #include <iostream>
 
 /**

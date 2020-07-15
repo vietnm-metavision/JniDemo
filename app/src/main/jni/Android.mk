@@ -20,7 +20,7 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-TARGET_PLATFORM := android-14
+TARGET_PLATFORM := android-16
 LOCAL_MODULE    := bitmapblur
 LOCAL_SRC_FILES := bitmap_blur.cpp
 LOCAL_LDLIBS    += -llog -ljnigraphics -latomic
@@ -31,7 +31,7 @@ include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 
-TARGET_PLATFORM := android-14
+TARGET_PLATFORM := android-16
 LOCAL_MODULE    := blur_sof
 LOCAL_SRC_FILES := blur_sof.cpp
 LOCAL_LDLIBS    += -llog -ljnigraphics -latomic
@@ -42,7 +42,7 @@ include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 
-TARGET_PLATFORM := android-14
+TARGET_PLATFORM := android-16
 LOCAL_MODULE    := native-lib
 LOCAL_SRC_FILES := native-lib.cpp
 LOCAL_LDLIBS    += -llog -latomic
@@ -53,7 +53,7 @@ include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 
-TARGET_PLATFORM := android-14
+TARGET_PLATFORM := android-16
 LOCAL_MODULE    := stringutils
 LOCAL_SRC_FILES := stringutils.cpp
 LOCAL_LDLIBS    += -llog -latomic
@@ -82,8 +82,8 @@ LOCAL_SRC_FILES := crypto/crypto.cpp \
                    crypto/aes.cpp \
                    crypto/mydigest.cpp
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/openssl/$(TARGET_ARCH_ABI)/include
-TARGET_PLATFORM := android-14
+TARGET_PLATFORM := android-16
 # 静态库依赖
 LOCAL_STATIC_LIBRARIES  := libssl libcrypto
-LOCAL_LDLIBS += -latomic -lz -llog
+LOCAL_LDLIBS +=  -lz -llog #-latomic
 include $(BUILD_SHARED_LIBRARY)

@@ -4,11 +4,11 @@
 
 #include <string>
 #include "aes.h"
-#include <openssl/armeabi/include/openssl/aes.h>
-#include <openssl/armeabi/include/openssl/evp.h>
+#include <openssl/armeabi-v7a/include/openssl/aes.h>
+#include <openssl/armeabi-v7a/include/openssl/evp.h>
 #include <android/log.h>
 
-#include <openssl/armeabi/include/openssl/conf.h>
+#include <openssl/armeabi-v7a/include/openssl/conf.h>
 #include <openssl/err.h>
 #include <string.h>
 
