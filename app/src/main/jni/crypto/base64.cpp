@@ -4,11 +4,11 @@
 
 #include "base64.h"
 #include <iostream>
-#include <openssl/armeabi-v7a/include/openssl/ossl_typ.h>
-#include <openssl/armeabi-v7a/include/openssl/evp.h>
-#include <openssl/armeabi-v7a/include/openssl/bio.h>
-#include <openssl/armeabi-v7a/include/openssl/buffer.h>
-#include <openssl/armeabi-v7a/include/openssl/err.h>
+#include <openssl/ossl_typ.h>
+#include <openssl/evp.h>
+#include <openssl/bio.h>
+#include <openssl/buffer.h>
+#include <openssl/err.h>
 
 /**
  * @param text
