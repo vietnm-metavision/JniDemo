@@ -1,0 +1,9 @@
+prefix=/mnt/c/Users/Viet_Nguyen/Documents/GitHub/openssl_for_ios_and_android/tools/../output/android/openssl-x86
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: OpenSSL
+Description: Secure Sockets Layer and cryptography libraries and tools
+Version: 1.1.1g
+Requires: libssl libcrypto
