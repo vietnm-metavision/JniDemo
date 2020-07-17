@@ -66,7 +66,7 @@ function configure_make() {
     fi
     tar xfz "${LIB_NAME}.tar.gz"
     pushd .
-    cd "${LIB_NAME}"
+    cd "${LIB_NAME}" #&& /usr/bin/sed -i 's/SHLIB_VERSION_NUMBER.*/SHLIB_VERSION_NUMBER ""/' include/openssl/opensslv.h
 
     PREFIX_DIR="${pwd_path}/../${ABI}"
     if [ -d "${PREFIX_DIR}" ]; then
@@ -108,19 +108,15 @@ function configure_make() {
     log_info "Start make $ABI..."
 
     make clean >"${OUTPUT_ROOT}/log/${ABI}.log"
-    if make -j$(get_cpu_count) >>"${OUTPUT_ROOT}/log/${ABI}.log" 2>&1; then
-        make install_sw >>"${OUTPUT_ROOT}/log/${ABI}.log" 2>&1
-        make install_ssldirs >>"${OUTPUT_ROOT}/log/${ABI}.log" 2>&1
+    if make SHLIB_EXT=".so" -j$(get_cpu_count) >>"${OUTPUT_ROOT}/log/${ABI}.log" 2>&1; then
+        make SHLIB_EXT=".so" install_sw >>"${OUTPUT_ROOT}/log/${ABI}.log" 2>&1
+        make SHLIB_EXT=".so" install_ssldirs >>"${OUTPUT_ROOT}/log/${ABI}.log" 2>&1
     fi
     
     log_info "Finish make $ABI ..."
 ##small fix
     rm -rf ${PREFIX_DIR}/bin
     rm -rf ${PREFIX_DIR}/ssl
-    rm -rf ${PREFIX_DIR}/lib/libcrypto.so
-    rm -rf ${PREFIX_DIR}/lib/libssl.so
-    cp ${PREFIX_DIR}/lib/libcrypto.so.1.1 ${PREFIX_DIR}/lib/libcrypto.so
-    cp ${PREFIX_DIR}/lib/libssl.so.1.1 ${PREFIX_DIR}/lib/libssl.so
 ###
     
     popd
