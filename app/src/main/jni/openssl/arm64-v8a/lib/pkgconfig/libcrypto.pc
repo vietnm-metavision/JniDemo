@@ -1,4 +1,4 @@
-prefix=/mnt/c/Users/Viet_Nguyen/Documents/GitHub/openssl_for_ios_and_android/tools/../output/android/openssl-arm64-v8a
+prefix=/mnt/c/Users/Viet_Nguyen/Documents/GitHub/JniDemo/app/src/main/jni/openssl/tools/../arm64-v8a
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include
